@@ -1,0 +1,14 @@
+{
+  "architecture": "gelu_residual_mlp",
+  "source_block": 25,
+  "hidden_width": 4608,
+  "modes": ["prefill_once", "fixed_recurrent", "repredict_recurrent"],
+  "objectives": ["dense", "dense_plus_kl"],
+  "learning_rate": 0.001,
+  "weight_decay": 0.0,
+  "training_steps": 800,
+  "eval_every": 10,
+  "minimum_training_steps": 100,
+  "patience_evals": 15,
+  "trajectory_chunk_rows": 32
+}

@@ -1,0 +1,79 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "interpretability-gepa"
+version = "0.1.0"
+description = "Mechanistic comparison of discrete and continuous prompt optimization"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "numpy>=2.1,<3",
+  "numcodecs==0.15.1",
+  "pandas>=2.2,<3",
+  "pyarrow>=18,<22",
+  "pydantic>=2.10,<3",
+  "PyYAML>=6.0,<7",
+  "scikit-learn>=1.6,<2",
+  "scipy>=1.14,<2",
+  "tensorboard>=2.18,<3",
+  "typer>=0.15,<1",
+  "zarr>=2.18,<3",
+]
+
+[project.optional-dependencies]
+models = [
+  "accelerate>=1.2,<2",
+  "peft==0.19.1",
+  "safetensors>=0.5,<1",
+  "torch==2.11.0",
+  "transformers==5.14.1",
+]
+data = ["datasets>=3.2,<5", "iterative-stratification>=0.1.9,<1"]
+gepa = ["anthropic>=0.52,<1", "gepa==0.1.4", "httpx>=0.28,<1", "openai>=1.59,<3"]
+serving = ["vllm==0.25.1"]
+plot = ["matplotlib>=3.10,<4", "seaborn>=0.13,<1"]
+
+[dependency-groups]
+dev = [
+  "coverage[toml]>=7.6,<8",
+  "mypy>=1.14,<2",
+  "pytest>=8.3,<9",
+  "pytest-cov>=6,<7",
+  "ruff>=0.9,<1",
+  "types-PyYAML>=6.0,<7",
+]
+
+[project.scripts]
+interp = "interpretability_gepa.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/interpretability_gepa"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+markers = [
+  "network: requires network access",
+  "gpu: requires CUDA and model weights",
+]
+
+[tool.coverage.run]
+source = ["interpretability_gepa"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+packages = ["interpretability_gepa"]
+ignore_missing_imports = true
+warn_return_any = false
+disallow_untyped_calls = false
+disable_error_code = ["import-untyped"]

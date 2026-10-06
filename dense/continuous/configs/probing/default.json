@@ -1,0 +1,10 @@
+{
+  "probe_seeds": [0, 1, 2, 3, 4],
+  "l2_values": [0.0, 0.00001, 0.0001, 0.001, 0.01],
+  "steps": 500,
+  "batch_size": 512,
+  "learning_rate": 0.03,
+  "optimization_seed": 42,
+  "state_position": "last_non_padding_prompt_token",
+  "layers": "all_hidden_states"
+}

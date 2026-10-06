@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+results/
+data/cache/
+*.egg-info/
+*.log
+.hf_token
+.anthropic_key
+openrouter.token

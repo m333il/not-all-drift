@@ -1,0 +1,34 @@
+[project]
+name = "mrd-adaptation"
+version = "1.0.0"
+description = "GEPA, prompt tuning and prefix tuning on frozen MoE backbones"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "numpy>=1.26",
+    "httpx>=0.27",
+    "safetensors>=0.4",
+    "torch>=2.6",
+    "transformers==5.16.1",
+    "peft==0.20.0",
+    "accelerate>=1.0",
+    "gepa==0.1.4",
+]
+
+[project.optional-dependencies]
+wandb = ["wandb"]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "scripts"]
+testpaths = ["tests"]
+addopts = "-m 'not gpu'"
+markers = [
+    "gpu: needs a CUDA device and the model in the local Hugging Face cache; run with `pytest -m gpu`.",
+]

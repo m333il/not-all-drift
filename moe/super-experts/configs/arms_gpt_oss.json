@@ -1,0 +1,57 @@
+[
+  {
+    "name": "base",
+    "kind": "text",
+    "instruction_key": "civil_comments"
+  },
+  {
+    "name": "gepa",
+    "kind": "text",
+    "instruction_file": "prompts/gepa-gpt-oss-20b.txt"
+  },
+  {
+    "name": "neutral-matched-gepa",
+    "kind": "text",
+    "pad_to": "prompts/gepa-gpt-oss-20b.txt"
+  },
+  {
+    "name": "prompt-m100",
+    "kind": "peft",
+    "dir": "arms/gpt-oss-20b/prompt-m100"
+  },
+  {
+    "name": "prompt-m200",
+    "kind": "peft",
+    "dir": "arms/gpt-oss-20b/prompt-m200"
+  },
+  {
+    "name": "prompt-m500",
+    "kind": "peft",
+    "dir": "arms/gpt-oss-20b/prompt-m500"
+  },
+  {
+    "name": "prefix-m100",
+    "kind": "peft",
+    "dir": "arms/gpt-oss-20b/prefix-m100"
+  },
+  {
+    "name": "prefix-m200",
+    "kind": "peft",
+    "dir": "arms/gpt-oss-20b/prefix-m200"
+  },
+  {
+    "name": "prefix-m500",
+    "kind": "peft",
+    "dir": "arms/gpt-oss-20b/prefix-m500"
+  },
+  {
+    "name": "prompt-m500-init",
+    "kind": "peft",
+    "dir": "arms/gpt-oss-20b/prompt-m500-init"
+  },
+  {
+    "name": "prefix-m500-init",
+    "kind": "peft",
+    "dir": "arms/gpt-oss-20b/prefix-m500-init"
+  }
+]

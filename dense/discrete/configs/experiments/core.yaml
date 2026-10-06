@@ -1,0 +1,202 @@
+name: discrete-vs-continuous-core
+dataset:
+  id: civil_comments
+  revision: 61864fdf071fdb5a8fd8c74f5d23271c6a9fc65c
+  train_size: 100
+  optimizer_val_size: 200
+  probe_train_size: 8000
+  probe_val_size: 2000
+  intervention_val_size: 2000
+  mechanistic_eval_size: 1000
+  natural_eval_size: 5000
+  binarization_threshold: 0.5
+dataset_catalog:
+  civil_comments:
+    id: civil_comments
+    revision: 61864fdf071fdb5a8fd8c74f5d23271c6a9fc65c
+    train_size: 100
+    optimizer_val_size: 200
+    probe_train_size: 8000
+    probe_val_size: 2000
+    intervention_val_size: 2000
+    mechanistic_eval_size: 1000
+    natural_eval_size: 5000
+    binarization_threshold: 0.5
+  goemotions:
+    id: goemotions
+    revision: add492243ff905527e67aeb8b80c082af02207c3
+    train_size: 100
+    optimizer_val_size: 50
+    probe_train_size: 4000
+    probe_val_size: 500
+    intervention_val_size: 500
+    mechanistic_eval_size: 500
+    natural_eval_size: 5000
+  hallmarks_of_cancer:
+    id: hallmarks_of_cancer
+    revision: 6f8ce801f8cf4cc9d58c08f61f3424ad612f2f67
+    train_size: 100
+    optimizer_val_size: 50
+    probe_train_size: 4000
+    probe_val_size: 500
+    intervention_val_size: 500
+    mechanistic_eval_size: 500
+    natural_eval_size: 1000
+    group_field: pmid
+models:
+  - key: gemma2_9b
+    id: google/gemma-2-9b-it
+    revision: 11c9b309abf73637e4b6f9a3fa1e92e615547819
+    role: primary
+    family: gemma2
+    scale: large
+    endpoint: http://127.0.0.1:8010/v1
+    layers: 42
+    resource_pool: hf_single
+  - key: gemma2_2b
+    id: google/gemma-2-2b-it
+    revision: 299a8560bedf22ed1c72a8a11e7dce4a7f9f51f8
+    role: replication
+    family: gemma2
+    scale: small
+    endpoint: http://127.0.0.1:8011/v1
+    layers: 26
+    resource_pool: hf_single
+  - key: qwen3_8b
+    id: Qwen/Qwen3-8B
+    revision: b968826d9c46dd6066d109eabc6255188de91218
+    role: replication
+    family: qwen3
+    scale: large
+    endpoint: http://127.0.0.1:8012/v1
+    non_thinking: true
+    layers: 36
+    resource_pool: hf_single
+  - key: qwen3_1_7b
+    id: Qwen/Qwen3-1.7B
+    revision: 70d244cc86ccca08cf5af4e1e306ecf908b1ad5e
+    role: replication
+    family: qwen3
+    scale: small
+    endpoint: http://127.0.0.1:8013/v1
+    non_thinking: true
+    layers: 28
+    resource_pool: hf_single
+matrix:
+  model_keys: [gemma2_9b, gemma2_2b, qwen3_8b, qwen3_1_7b]
+  dataset_ids:
+    [
+      civil_comments,
+      goemotions,
+      hallmarks_of_cancer,
+    ]
+  conditions:
+    - C_null
+    - C_bland
+    - C_seed
+    - C_adapt
+    - C_prefix
+    - C_seed_pad
+    - C_prefix_rand
+    - C_adapt_shuf0
+    - C_adapt_shuf1
+    - C_adapt_shuf2
+    - C_adapt_rand
+task_provider:
+  kind: vllm
+  model: google/gemma-2-9b-it
+  temperature: 0.0
+  base_url: http://127.0.0.1:8010/v1
+generation:
+  temperature: 0.0
+  max_new_tokens: 128
+  do_sample: false
+gepa:
+  seeds: [42, 43, 44]
+  max_metric_calls: 10000
+  pilot_metric_calls: 1000
+  reflection_minibatch_size: 5
+  reflection_max_tokens: 32768
+  reflection_instruction_budget_tokens: 8192
+  local_reflector:
+    kind: vllm
+    model: lordx64/Qwen3.6-35B-A3B-Claude-4.7-Opus-Reasoning-Distilled
+    temperature: 0.7
+    revision: 9461222ba22e5ec299004c1bef5d932cdee26152
+    dtype: bfloat16
+    quantization: null
+    chat_template_kwargs:
+      enable_thinking: false
+    base_url: http://127.0.0.1:8020/v1
+  api_reflector:
+    kind: openai
+    # Dated model id.
+    model: openai/gpt-5.6-luna-pro-20260709
+    temperature: 0.7
+    base_url: https://openrouter.ai/api/v1
+    api_key_env: OPENROUTER_API_KEY
+    # Reasoning tokens count against reflection_max_tokens.
+    extra_body:
+      reasoning:
+        effort: medium
+    timeout_seconds: 900.0
+    max_retries: 8
+prefix:
+  seeds: [42, 43, 44]
+  virtual_tokens: [10, length_match]
+  learning_rates: [0.001, 0.0003, 0.0001]
+  max_steps: 500
+  pilot_steps: 300
+  patience: 50
+  batch_size: 4
+  validation_interval: 10
+  checkpoint_fractions: [0.1, 0.25, 0.5]
+probes:
+  c_values: [0.01, 0.1, 1.0, 10.0]
+  seeds: [0, 1, 2, 3, 4]
+  threshold: 0.5
+interventions:
+  alphas: [0.5, 1.0, 2.0, 4.0]
+  relative_norms: [0.05, 0.1, 0.2]
+  layer_fractions: [0.25, 0.4, 0.55, 0.7]
+  bootstrap_samples: 1000
+  parse_failure_limit: 0.1
+statistics:
+  bootstrap_samples: 1000
+  confidence: 0.95
+  correction: holm
+sae:
+  enabled: true
+  reconstruction_cosine_min: 0.8
+  fve_min: 0.5
+  max_dead_feature_fraction: 0.95
+  max_lm_loss_delta: 0.1
+  max_next_token_kl: 0.1
+  matched_random_draws: 5
+decisions:
+  practical_f1: 0.02
+  latent_gap: 0.05
+  elicitation_fraction: 0.5
+  equivalence_margin: 0.02
+  strong_cross_recovery: 0.5
+  cross_recovery_ci_floor: 0.3
+resources:
+  launcher: local
+  devices: []
+  pools:
+    hf_single:
+      gpus_per_job: 1
+      tensor_parallel_size: 1
+      exclusive: true
+    reflector:
+      gpus_per_job: 1
+      tensor_parallel_size: 1
+      exclusive: true
+    cpu_probe:
+      gpus_per_job: 0
+      max_workers: 32
+  scratch_root: results
+output:
+  root: results
+  timezone: UTC
+  activation_compressor: zstd

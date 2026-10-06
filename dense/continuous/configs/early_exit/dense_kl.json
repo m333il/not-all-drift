@@ -1,0 +1,17 @@
+{
+  "model_name": "google/gemma-2-2b-it",
+  "model_revision": "299a8560bedf22ed1c72a8a11e7dce4a7f9f51f8",
+  "source_block": 20,
+  "target_block": 25,
+  "max_input_length": 512,
+  "max_new_tokens": 64,
+  "cache_batch_size": 8,
+  "train_batch_positions": 32,
+  "generation_batch_size": 8,
+  "learning_rate": 0.0001,
+  "weight_decay": 0.0,
+  "training_steps": 400,
+  "eval_every": 10,
+  "patience_evals": 20,
+  "cpu_threads": 2
+}

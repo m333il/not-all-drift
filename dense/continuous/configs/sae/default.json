@@ -1,0 +1,14 @@
+{
+  "sae_family": "gemma-scope-2b-pt-res",
+  "layers": [0, 6, 13, 20, 25],
+  "state_position": "generation_anchor",
+  "top_k": [16, 32, 64, 128],
+  "metrics": [
+    "reconstruction_mse",
+    "explained_variance",
+    "shift_energy_recovered",
+    "kl_recovered",
+    "feature_cosine",
+    "signed_topk_overlap"
+  ]
+}

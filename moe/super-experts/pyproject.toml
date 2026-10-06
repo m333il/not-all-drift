@@ -1,0 +1,32 @@
+[project]
+name = "se-gepa"
+version = "1.0.0"
+description = "Super experts of MoE models under prompt and prefix adaptation"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "numpy>=1.26",
+    "torch>=2.6",
+    "transformers==5.16.1",
+    "peft==0.20.0",
+    "accelerate>=1.0",
+    "datasets>=3.0",
+    "matplotlib>=3.8",
+    "interpretability-gepa",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.uv.sources]
+interpretability-gepa = { path = "../../dense/discrete", editable = true }
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "scripts", "tests"]
+testpaths = ["tests"]

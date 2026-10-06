@@ -1,0 +1,47 @@
+schema_version: 1
+# Samples-F1 where a correctly empty prediction scores 1 (key `f1_samples`).
+# The sklearn zero_division=0 variant is kept as `f1_samples_legacy`.
+primary_metric: f1_samples_empty_aware
+# Reported next to the primary metric (always answering NONE already scores ~0.5).
+secondary_metrics:
+  [
+    f1_samples_positive,
+    no_label_accuracy,
+    f1_samples_legacy,
+    f1_micro,
+    f1_macro,
+    subset_accuracy,
+    hamming_loss,
+    avg_predictions,
+  ]
+probe:
+  position: last_prompt
+  c_values: [0.01, 0.1, 1.0, 10.0]
+  # The largest rung equals the frozen per-seed subset of the v2 split (0.8 x 8000).
+  train_sizes: [250, 500, 1000, 2000, 3200, 6400]
+  seeds: [0, 1, 2, 3, 4]
+  permutations: 999
+interventions:
+  alphas: [0.5, 1.0, 2.0, 4.0]
+  relative_norms: [0.05, 0.1, 0.2]
+  normalized_depths: [0.25, 0.4, 0.55, 0.7]
+  parse_failure_limit: 0.1
+  prediction_multiplier_limit: 2.0
+claim_gates:
+  optimizer_gain: 0.02
+  latent_gap: 0.05
+  elicitation_fraction: 0.5
+  global_recovery: 0.3
+  paired_patch_recovery: 0.5
+  necessity_fraction: 0.3
+  cross_recovery: 0.5
+  cross_recovery_ci_floor: 0.3
+  sae_reconstruction_cosine: 0.8
+  sae_fve: 0.5
+statistics:
+  bootstrap_samples: 1000
+  confidence: 0.95
+  correction: holm
+  hallmarks_bootstrap_group: pmid
+selection_splits: [optimizer_val, probe_val, intervention_val, sae_calibration]
+final_splits: [eval_mechanistic, eval_natural]

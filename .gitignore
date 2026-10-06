@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv*/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+build/
+dist/
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Run outputs, weights and caches. Everything below is produced by the code.
+results/
+outputs/
+runs/
+wandb/
+*.log
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.npz
+*.zarr/

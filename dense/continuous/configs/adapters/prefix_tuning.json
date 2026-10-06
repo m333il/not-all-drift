@@ -1,0 +1,28 @@
+{
+  "model_name": "google/gemma-2-2b-it",
+  "model_revision": "299a8560bedf22ed1c72a8a11e7dce4a7f9f51f8",
+  "method": "prefix_tuning",
+  "train_samples": [200, 500, 1000, 10000, 20000],
+  "seeds": [42, 43, 44],
+  "num_virtual_tokens": [20, 50, 100, 200, 500],
+  "prefix_projection": true,
+  "learning_rate": 0.0001,
+  "weight_decay": 0.0,
+  "lr_scheduler": "linear_decay",
+  "warmup_ratio": 0.0,
+  "min_lr_ratio": 0.0,
+  "max_epochs_by_train_samples": {
+    "200": 64,
+    "500": 64,
+    "1000": 64,
+    "10000": 7,
+    "20000": 4
+  },
+  "train_batch_size": 8,
+  "eval_batch_size": 16,
+  "gradient_accumulation_steps": 4,
+  "max_length": 512,
+  "max_new_tokens": 48,
+  "selection_metric": "samples_f1",
+  "save_best_by": ["samples_f1", "validation_loss"]
+}

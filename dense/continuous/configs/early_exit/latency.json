@@ -1,0 +1,41 @@
+{
+  "model_name": "google/gemma-2-2b-it",
+  "model_revision": null,
+  "test_file": "data/test.jsonl",
+  "test_ids": "data/test_ids.json",
+  "samples": 100,
+  "batch_size": 16,
+  "max_input_length": 512,
+  "fixed_decode_tokens": 16,
+  "natural_max_new_tokens": 48,
+  "protocols": ["fixed_tokens"],
+  "warmup_batches": 1,
+  "repeats": 2,
+  "cpu_threads": 1,
+  "local_files_only": false,
+  "native_conditions": {
+    "manual": {
+      "prompt_template": "prompts/manual.txt"
+    },
+    "prompt": {
+      "prompt_template": "prompts/manual.txt",
+      "adapter_path": "artifacts/prompt_adapter"
+    },
+    "prefix": {
+      "prompt_template": "prompts/manual.txt",
+      "adapter_path": "artifacts/prefix_adapter"
+    }
+  },
+  "early_exit_conditions": {
+    "prompt_20_to_25": {
+      "prompt_template": "prompts/manual.txt",
+      "source_block": 20,
+      "predictor": "artifacts/prompt_20_to_25/predictor.safetensors"
+    },
+    "prefix_20_to_25": {
+      "prompt_template": "prompts/manual.txt",
+      "source_block": 20,
+      "predictor": "artifacts/prefix_20_to_25/predictor.safetensors"
+    }
+  }
+}

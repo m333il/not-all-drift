@@ -1,0 +1,23 @@
+{
+  "Qwen/Qwen3-30B-A3B-Instruct-2507": {
+    "base_revision": "0d7cf23991f47feeb3a57ecb4c9cee8ea4a17bfe",
+    "super_experts": [
+      "1:68",
+      "2:92",
+      "3:82"
+    ],
+    "super_experts_note": "Identified on the pinned base revision from 32 contiguous WikiText-2 segments of 2048 tokens with the max-absolute expert-output criterion (profile_super_experts.py)."
+  },
+  "openai/gpt-oss-20b": {
+    "base_revision": "6cee5e81ee83917806bbde320786a8fb61efebee",
+    "super_experts": [
+      "17:5",
+      "6:5"
+    ],
+    "super_experts_note": "Identified on the pinned base revision from 32 contiguous WikiText-2 segments of 2048 tokens with the max-absolute expert-output criterion (profile_super_experts.py). Layer 17 expert 5 peaks at 54272 and layer 6 expert 5 at 43008, both at position 0.",
+    "chat_pins": {
+      "reasoning_effort": "low",
+      "date": "2026-09-07"
+    }
+  }
+}

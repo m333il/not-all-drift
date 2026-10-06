@@ -1,0 +1,15 @@
+{
+  "readout": "frozen_final_norm_and_unembedding",
+  "translator": null,
+  "temperature": 1.0,
+  "batch_size": 16,
+  "state_position": "last_non_padding_prompt_token",
+  "terminal_state_already_normalized": true,
+  "stored_per_example_values": ["label_first_token_probability"],
+  "aggregate_metrics": [
+    "kl_to_final",
+    "top1_agreement",
+    "teacher_top1_probability",
+    "entropy"
+  ]
+}

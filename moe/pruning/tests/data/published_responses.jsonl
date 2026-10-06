@@ -1,0 +1,77 @@
+{"cell": "frozen_base", "arm": "base", "gold": ["toxicity", "insult"], "response": "insult, identity_attack", "published_score": 0.5}
+{"cell": "frozen_base", "arm": "base", "gold": ["toxicity", "insult"], "response": "toxicity, obscene, threat, insult, identity_attack", "published_score": 0.5714285714285715}
+{"cell": "frozen_base", "arm": "base", "gold": ["toxicity", "insult"], "response": "insult, identity_attack", "published_score": 0.5}
+{"cell": "frozen_base", "arm": "base", "gold": ["toxicity", "insult"], "response": "insult, identity_attack", "published_score": 0.5}
+{"cell": "frozen_base", "arm": "base", "gold": ["toxicity"], "response": "obscene, insult, identity_attack", "published_score": 0.0}
+{"cell": "frozen_base", "arm": "base", "gold": ["toxicity", "insult"], "response": "insult, identity_attack", "published_score": 0.5}
+{"cell": "frozen_base", "arm": "base", "gold": [], "response": "identity_attack, threat", "published_score": 0.0}
+{"cell": "frozen_base", "arm": "base", "gold": [], "response": "NONE", "published_score": 1.0}
+{"cell": "frozen_base", "arm": "base", "gold": ["toxicity", "insult"], "response": "insult, identity_attack, obscene", "published_score": 0.4}
+{"cell": "frozen_base", "arm": "base", "gold": [], "response": "NONE", "published_score": 1.0}
+{"cell": "frozen_base", "arm": "base", "gold": ["toxicity", "insult"], "response": "insult, identity_attack", "published_score": 0.5}
+{"cell": "frozen_base", "arm": "base", "gold": [], "response": "toxic, insult, identity_attack", "published_score": 0.0}
+{"cell": "frozen_base", "arm": "base", "gold": [], "response": "toxicity, obscene, threat, insult, identity_attack", "published_score": 0.0}
+{"cell": "frozen_base", "arm": "base", "gold": ["toxicity", "identity_attack"], "response": "NONE", "published_score": 0.0}
+{"cell": "frozen_base", "arm": "base", "gold": ["toxicity", "threat"], "response": "threat, insult, identity_attack", "published_score": 0.4}
+{"cell": "frozen_base", "arm": "base", "gold": ["toxicity", "insult"], "response": "insult, identity_attack", "published_score": 0.5}
+{"cell": "frozen_base", "arm": "base", "gold": [], "response": "identity_attack, insult", "published_score": 0.0}
+{"cell": "frozen_base", "arm": "base", "gold": ["toxicity", "insult"], "response": "insult, identity_attack", "published_score": 0.5}
+{"cell": "frozen_base", "arm": "base", "gold": ["toxicity", "insult"], "response": "insult, identity_attack", "published_score": 0.5}
+{"cell": "frozen_base", "arm": "base", "gold": ["toxicity", "insult"], "response": "threat, insult, identity_attack", "published_score": 0.4}
+{"cell": "frozen_base", "arm": "base", "gold": ["toxicity", "obscene", "insult"], "response": "toxicity, obscene, insult, identity_attack", "published_score": 0.8571428571428571}
+{"cell": "frozen_base", "arm": "base", "gold": [], "response": "NONE", "published_score": 1.0}
+{"cell": "frozen_base", "arm": "base", "gold": ["toxicity", "insult"], "response": "toxicity, obscene, threat, insult, identity_attack", "published_score": 0.5714285714285715}
+{"cell": "frozen_base", "arm": "base", "gold": ["toxicity", "obscene", "insult"], "response": "toxicity, obscene, insult, identity_attack", "published_score": 0.8571428571428571}
+{"cell": "frozen_base", "arm": "base", "gold": ["toxicity", "insult"], "response": "toxicity, obscene, threat, insult, identity_attack", "published_score": 0.5714285714285715}
+{"cell": "frozen_gepa", "arm": "gepa", "gold": ["toxicity", "insult"], "response": "toxicity, insult", "published_score": 1.0}
+{"cell": "frozen_gepa", "arm": "gepa", "gold": ["toxicity", "insult"], "response": "toxicity, insult", "published_score": 1.0}
+{"cell": "frozen_gepa", "arm": "gepa", "gold": ["toxicity", "insult"], "response": "toxicity, insult", "published_score": 1.0}
+{"cell": "frozen_gepa", "arm": "gepa", "gold": ["toxicity", "insult"], "response": "toxicity, insult", "published_score": 1.0}
+{"cell": "frozen_gepa", "arm": "gepa", "gold": ["toxicity"], "response": "toxicity, insult", "published_score": 0.6666666666666666}
+{"cell": "frozen_gepa", "arm": "gepa", "gold": ["toxicity", "insult"], "response": "NONE", "published_score": 0.0}
+{"cell": "frozen_gepa", "arm": "gepa", "gold": [], "response": "NONE", "published_score": 1.0}
+{"cell": "frozen_gepa", "arm": "gepa", "gold": [], "response": "NONE", "published_score": 1.0}
+{"cell": "frozen_gepa", "arm": "gepa", "gold": ["toxicity", "insult"], "response": "toxicity, insult, identity_attack", "published_score": 0.8}
+{"cell": "frozen_gepa", "arm": "gepa", "gold": [], "response": "NONE", "published_score": 1.0}
+{"cell": "frozen_gepa", "arm": "gepa", "gold": ["toxicity", "insult"], "response": "toxicity, insult", "published_score": 1.0}
+{"cell": "frozen_gepa", "arm": "gepa", "gold": [], "response": "NONE", "published_score": 1.0}
+{"cell": "frozen_gepa", "arm": "gepa", "gold": [], "response": "toxicity, insult", "published_score": 0.0}
+{"cell": "frozen_gepa", "arm": "gepa", "gold": ["toxicity", "identity_attack"], "response": "NONE", "published_score": 0.0}
+{"cell": "frozen_gepa", "arm": "gepa", "gold": ["toxicity", "threat"], "response": "toxicity, threat", "published_score": 1.0}
+{"cell": "frozen_gepa", "arm": "gepa", "gold": ["toxicity", "insult"], "response": "NONE", "published_score": 0.0}
+{"cell": "frozen_gepa", "arm": "gepa", "gold": [], "response": "NONE", "published_score": 1.0}
+{"cell": "frozen_gepa", "arm": "gepa", "gold": ["toxicity", "insult"], "response": "toxicity, insult", "published_score": 1.0}
+{"cell": "frozen_gepa", "arm": "gepa", "gold": ["toxicity", "insult"], "response": "toxicity, insult", "published_score": 1.0}
+{"cell": "frozen_gepa", "arm": "gepa", "gold": ["toxicity", "insult"], "response": "toxicity, insult, identity_attack", "published_score": 0.8}
+{"cell": "frozen_gepa", "arm": "gepa", "gold": ["toxicity", "obscene", "insult"], "response": "toxicity, obscene, insult", "published_score": 1.0}
+{"cell": "frozen_gepa", "arm": "gepa", "gold": [], "response": "NONE", "published_score": 1.0}
+{"cell": "frozen_gepa", "arm": "gepa", "gold": ["toxicity", "insult"], "response": "toxicity, obscene, threat, insult", "published_score": 0.6666666666666666}
+{"cell": "frozen_gepa", "arm": "gepa", "gold": ["toxicity", "obscene", "insult"], "response": "toxicity, insult", "published_score": 0.8}
+{"cell": "frozen_gepa", "arm": "gepa", "gold": ["toxicity", "insult"], "response": "toxicity, insult", "published_score": 1.0}
+{"cell": "frozen_pt", "arm": "prompt_tuning", "gold": ["toxicity", "insult"], "response": "toxicity, insult, identity_attack, NONE", "published_score": 0.0}
+{"cell": "frozen_pt", "arm": "prompt_tuning", "gold": [], "response": "toxicity, insult, identity_attack, NONE", "published_score": 1.0}
+{"cell": "frozen_pt", "arm": "prompt_tuning", "gold": ["toxicity", "insult"], "response": "toxicity, insult, identity_attack", "published_score": 0.8}
+{"cell": "frozen_pt", "arm": "prompt_tuning", "gold": ["toxicity", "insult"], "response": "toxicity, insult, identity_attack", "published_score": 0.8}
+{"cell": "frozen_pt", "arm": "prompt_tuning", "gold": ["toxicity", "insult"], "response": "toxicity, insult, identity_attack", "published_score": 0.8}
+{"cell": "frozen_pt", "arm": "prompt_tuning", "gold": ["toxicity", "insult"], "response": "toxicity, insult, identity_attack", "published_score": 0.8}
+{"cell": "frozen_pt", "arm": "prompt_tuning", "gold": ["toxicity"], "response": "toxicity, obscene, insult, identity_attack", "published_score": 0.4}
+{"cell": "frozen_pt", "arm": "prompt_tuning", "gold": ["toxicity", "insult"], "response": "toxicity, insult, identity_attack", "published_score": 0.8}
+{"cell": "frozen_pt", "arm": "prompt_tuning", "gold": [], "response": "NONE", "published_score": 1.0}
+{"cell": "frozen_pt", "arm": "prompt_tuning", "gold": [], "response": "NONE", "published_score": 1.0}
+{"cell": "frozen_pt", "arm": "prompt_tuning", "gold": ["toxicity", "insult"], "response": "toxicity, insult, identity_attack", "published_score": 0.8}
+{"cell": "frozen_pt", "arm": "prompt_tuning", "gold": [], "response": "toxicity, insult, identity_attack", "published_score": 0.0}
+{"cell": "frozen_pt", "arm": "prompt_tuning", "gold": ["toxicity", "insult"], "response": "toxicity, insult, identity_attack", "published_score": 0.8}
+{"cell": "frozen_pt", "arm": "prompt_tuning", "gold": [], "response": "NONE", "published_score": 1.0}
+{"cell": "frozen_pt", "arm": "prompt_tuning", "gold": [], "response": "toxicity, insult, identity_attack", "published_score": 0.0}
+{"cell": "frozen_pt", "arm": "prompt_tuning", "gold": ["toxicity", "identity_attack"], "response": "NONE", "published_score": 0.0}
+{"cell": "frozen_pt", "arm": "prompt_tuning", "gold": ["toxicity", "threat"], "response": "toxicity, threat, insult, identity_attack", "published_score": 0.6666666666666666}
+{"cell": "frozen_pt", "arm": "prompt_tuning", "gold": ["toxicity", "insult"], "response": "toxicity, insult, identity_attack", "published_score": 0.8}
+{"cell": "frozen_pt", "arm": "prompt_tuning", "gold": [], "response": "NONE", "published_score": 1.0}
+{"cell": "frozen_pt", "arm": "prompt_tuning", "gold": ["toxicity", "insult"], "response": "NONE", "published_score": 0.0}
+{"cell": "frozen_pt", "arm": "prompt_tuning", "gold": ["toxicity", "insult"], "response": "toxicity, insult, identity_attack", "published_score": 0.8}
+{"cell": "frozen_pt", "arm": "prompt_tuning", "gold": ["toxicity", "insult"], "response": "toxicity, insult, identity_attack", "published_score": 0.8}
+{"cell": "frozen_pt", "arm": "prompt_tuning", "gold": ["toxicity", "obscene", "insult"], "response": "toxicity, insult, identity_attack", "published_score": 0.6666666666666666}
+{"cell": "frozen_pt", "arm": "prompt_tuning", "gold": [], "response": "NONE", "published_score": 1.0}
+{"cell": "frozen_pt", "arm": "prompt_tuning", "gold": ["toxicity", "insult"], "response": "toxicity, threat, insult, identity_attack", "published_score": 0.6666666666666666}
+{"cell": "frozen_pt", "arm": "prompt_tuning", "gold": ["toxicity", "obscene", "insult"], "response": "toxicity, insult, identity_attack", "published_score": 0.6666666666666666}
+{"cell": "frozen_pt", "arm": "prompt_tuning", "gold": ["toxicity", "insult"], "response": "toxicity, insult, identity_attack, obscene, threat", "published_score": 0.5714285714285715}

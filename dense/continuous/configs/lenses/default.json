@@ -1,0 +1,10 @@
+{
+  "translator": "affine",
+  "objective": "kl_to_final_output_distribution",
+  "learning_rate": 0.001,
+  "weight_decay": 0.0,
+  "batch_size": 256,
+  "max_epochs": 100,
+  "patience": 10,
+  "seed": 42
+}

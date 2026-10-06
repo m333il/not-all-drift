@@ -1,0 +1,62 @@
+[
+  {
+    "name": "base",
+    "kind": "text",
+    "instruction_key": "civil_comments"
+  },
+  {
+    "name": "gepa",
+    "kind": "text",
+    "instruction_file": "prompts/gepa-qwen3-2507.txt"
+  },
+  {
+    "name": "neutral-matched-gepa",
+    "kind": "text",
+    "pad_to": "prompts/gepa-qwen3-2507.txt"
+  },
+  {
+    "name": "prompt-m100",
+    "kind": "peft",
+    "dir": "arms/qwen3-2507/prompt-m100"
+  },
+  {
+    "name": "prompt-m200",
+    "kind": "peft",
+    "dir": "arms/qwen3-2507/prompt-m200"
+  },
+  {
+    "name": "prompt-m500",
+    "kind": "peft",
+    "dir": "arms/qwen3-2507/prompt-m500"
+  },
+  {
+    "name": "prefix-m100",
+    "kind": "peft",
+    "dir": "arms/qwen3-2507/prefix-m100"
+  },
+  {
+    "name": "prefix-m200",
+    "kind": "peft",
+    "dir": "arms/qwen3-2507/prefix-m200"
+  },
+  {
+    "name": "prefix-m500",
+    "kind": "peft",
+    "dir": "arms/qwen3-2507/prefix-m500"
+  },
+  {
+    "name": "prompt-m500-init",
+    "kind": "peft",
+    "dir": "arms/qwen3-2507/prompt-m500-init"
+  },
+  {
+    "name": "prefix-m500-init",
+    "kind": "peft",
+    "dir": "arms/qwen3-2507/prefix-m500-init"
+  },
+  {
+    "name": "prefix-m500-lr1e-4",
+    "kind": "peft",
+    "dir": "arms/qwen3-2507/prefix-m500-lr1e-4"
+  }
+]
